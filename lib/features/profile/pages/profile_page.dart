@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import '../../../app/routes/app_routes.dart';
 import '../controller/profile_controller.dart';
 import '../../../app/theme/app_colors.dart';
 import '../../../app/theme/app_text_styles.dart';
@@ -36,6 +37,25 @@ class ProfilePage extends GetView<ProfileController> {
                   child: Text(controller.userPlan.toUpperCase() + ' · Actif',
                       style: const TextStyle(fontSize: 10, color: AppColors.primary, fontFamily: 'monospace', letterSpacing: 2, fontWeight: FontWeight.w600)),
                 )),
+                const SizedBox(height: 12),
+                GestureDetector(
+                  onTap: () => Get.toNamed(AppRoutes.editProfile),
+                  child: Container(
+                    padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 7),
+                    decoration: BoxDecoration(
+                      color: AppColors.surfaceVar,
+                      borderRadius: BorderRadius.circular(20),
+                      border: Border.all(color: AppColors.border),
+                    ),
+                    child: const Row(mainAxisSize: MainAxisSize.min, children: [
+                      Icon(Icons.edit_outlined, color: AppColors.textMuted, size: 13),
+                      SizedBox(width: 6),
+                      Text('Modifier le profil', style: TextStyle(
+                          fontSize: 11, color: AppColors.textMuted,
+                          fontFamily: 'monospace', fontWeight: FontWeight.w600)),
+                    ]),
+                  ),
+                ),
               ]),
             ),
             // Stats
@@ -89,8 +109,8 @@ class ProfilePage extends GetView<ProfileController> {
           const SizedBox(width: 14),
           Expanded(child: Text(label, style: TextStyle(fontSize: 13, fontWeight: FontWeight.w500, color: isRed ? AppColors.primary : AppColors.textPrimary))),
           if (badge != null) Container(padding: const EdgeInsets.symmetric(horizontal: 7, vertical: 2),
-            decoration: BoxDecoration(color: AppColors.primary, borderRadius: BorderRadius.circular(10)),
-            child: Text(badge, style: const TextStyle(fontSize: 9, color: Colors.white, fontFamily: 'monospace'))),
+              decoration: BoxDecoration(color: AppColors.primary, borderRadius: BorderRadius.circular(10)),
+              child: Text(badge, style: const TextStyle(fontSize: 9, color: Colors.white, fontFamily: 'monospace'))),
           Icon(Icons.chevron_right, color: isRed ? AppColors.primary : AppColors.textDisabled, size: 18),
         ]),
       ),

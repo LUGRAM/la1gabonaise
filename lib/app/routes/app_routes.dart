@@ -33,6 +33,7 @@ abstract class AppRoutes {
 
   // Profile & Settings
   static const String profile       = '/profile';
+  static const String editProfile   = '/edit-profile';
   static const String subscription  = '/subscription';
   static const String payment       = '/payment';
   static const String paymentSuccess = '/payment/success';

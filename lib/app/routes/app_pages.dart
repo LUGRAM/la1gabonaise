@@ -18,6 +18,7 @@ import '../../features/search/binding/search_binding.dart';
 import '../../features/downloads/pages/downloads_page.dart';
 import '../../features/downloads/binding/downloads_binding.dart';
 import '../../features/profile/pages/profile_page.dart';
+import '../../features/profile/pages/edit_profile_page.dart';
 import '../../features/profile/pages/settings_page.dart';
 import '../../features/profile/pages/subscription_page.dart';
 import '../../features/profile/pages/notifications_page.dart';
@@ -46,6 +47,7 @@ class AppPages {
     GetPage(name: AppRoutes.home,        page: () => const HomePage(),        binding: HomeBinding(),        customTransition: FadeScaleTransition(), transitionDuration: const Duration(milliseconds: 450)),
     GetPage(name: AppRoutes.search,      page: () => const SearchPage(),      binding: SearchBinding(),      customTransition: SlideRightTransition()),
     GetPage(name: AppRoutes.downloads,   page: () => const DownloadsPage(),   binding: DownloadsBinding(),   customTransition: SlideRightTransition()),
+    GetPage(name: AppRoutes.editProfile, page: () => const EditProfilePage(), binding: ProfileBinding(), customTransition: SlideRightTransition()),
     GetPage(name: AppRoutes.profile,     page: () => const ProfilePage(),     binding: ProfileBinding()),
     GetPage(name: AppRoutes.settings,    page: () => const SettingsPage(),    binding: ProfileBinding()),
     GetPage(name: AppRoutes.notifications, page: () => const NotificationsPage(), binding: ProfileBinding()),
